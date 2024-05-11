@@ -1,0 +1,46 @@
+# This is a Kubernetes Deployment configuration
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: commands-depl  # Name of the deployment
+  annotations:
+    kubernetes.io/change-cause: "Initial deployment of the app"  # Annotation for the deployment
+spec:
+  replicas: 1  # Number of replicas
+  selector:
+    matchLabels:
+      app: commandservice  # Label to match for the pods
+  template:
+    metadata:
+      labels:
+        env: prod  # Environment label
+        app: commandservice  # Application label
+        app.kubernetes.io/name: commandapp  # Name of the application
+    spec:
+      containers:
+        - name: commandservice  # Name of the container
+          image: dasashutosh/commandservice:latest  # Image for the container
+          imagePullPolicy: Always  # Policy to always pull the image
+          ports:
+            - containerPort: 80  # Port on which the container is listening
+              name: commandapp  # Name of the port
+          env:
+            - name: ASPNETCORE_URLS  # Environment variable
+              value: http://+:80  # Value of the environment variable
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: commands-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: commandservice
+  ports:
+  - name: commandservice
+    protocol: TCP
+    port: 80
+    targetPort: 80
+
+
+
