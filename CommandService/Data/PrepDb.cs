@@ -1,3 +1,5 @@
+using CommandService.Entities;
+using CommandService.SyncDataService.Grpc;
 using Microsoft.EntityFrameworkCore;
 
 namespace CommandService.Data
@@ -8,11 +10,13 @@ namespace CommandService.Data
         {
             using( var serviceScope = app.ApplicationServices.CreateScope())
             {
-                SeedData(serviceScope.ServiceProvider.GetService<AppDbContext>(), isProd);
+                var grpcClient=serviceScope.ServiceProvider.GetService<IPlatformDataClient>();
+                var platforms=grpcClient.ReturnAllPlatforms();
+                SeedData(serviceScope.ServiceProvider.GetService<ICommandRepo>(),serviceScope.ServiceProvider.GetService<AppDbContext>(), isProd, platforms);
             }
         }
 
-        private static void SeedData(AppDbContext context, bool isProd)
+        private static void SeedData(ICommandRepo repo,AppDbContext context, bool isProd,IEnumerable<Platform> platforms)
         {
             if(isProd)
             {
@@ -25,6 +29,14 @@ namespace CommandService.Data
                 {
                     Console.WriteLine($"--> Could not run migrations: {ex.Message}");
                 }
+            }
+            Console.WriteLine("-->seeding new platforms");
+            foreach(var plat in platforms){
+                 if(!repo.ExternalPlatformExists(plat.ExternalID))
+                {
+                    repo.CreatePlatform(plat);
+                }
+                repo.SaveChanges();
             }
         }
     }

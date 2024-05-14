@@ -3,6 +3,7 @@ using PlatformService.AsyncDataServices;
 using PlatformService.Data;
 using PlatformService.Repositories.Interfaces;
 using PlatformService.Repositories.Repository;
+using PlatformService.SyncDataServices.Grpc;
 using PlatformService.SyncDataServices.Http;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +25,8 @@ builder.Services.AddDbContext<AppDbContext>(option =>
 builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
 builder.Services.AddSingleton<IMessageBusClient, MessageBusClient>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.AddGrpc();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -41,7 +44,15 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-PrepDb.PrepPopulation(app, app.Environment.IsProduction());
+
 app.MapControllers();
+app.MapGrpcService<GrpcPlatformService>();
+
+app.MapGet("/protos/platforms.proto", async context =>
+{
+  await context.Response.WriteAsync(File.ReadAllText("Protos/platforms.proto"));
+});
+
+PrepDb.PrepPopulation(app, app.Environment.IsProduction());
 
 app.Run();

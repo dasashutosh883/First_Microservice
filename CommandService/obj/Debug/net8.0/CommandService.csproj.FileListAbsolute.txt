@@ -137,3 +137,9 @@ D:\projectsPractice\MicroserviceLesJackson\CommandService\obj\Debug\net8.0\Comma
 D:\projectsPractice\MicroserviceLesJackson\CommandService\obj\Debug\net8.0\CommandService.genruntimeconfig.cache
 D:\projectsPractice\MicroserviceLesJackson\CommandService\obj\Debug\net8.0\ref\CommandService.dll
 D:\projectsPractice\MicroserviceLesJackson\CommandService\bin\Debug\net8.0\appsettings.Production.json
+D:\projectsPractice\MicroserviceLesJackson\CommandService\obj\Debug\net8.0\CommandService.sourcelink.json
+D:\projectsPractice\MicroserviceLesJackson\CommandService\bin\Debug\net8.0\RabbitMQ.Client.dll
+D:\projectsPractice\MicroserviceLesJackson\CommandService\bin\Debug\net8.0\Google.Protobuf.dll
+D:\projectsPractice\MicroserviceLesJackson\CommandService\bin\Debug\net8.0\Grpc.Core.Api.dll
+D:\projectsPractice\MicroserviceLesJackson\CommandService\bin\Debug\net8.0\Grpc.Net.Client.dll
+D:\projectsPractice\MicroserviceLesJackson\CommandService\bin\Debug\net8.0\Grpc.Net.Common.dll

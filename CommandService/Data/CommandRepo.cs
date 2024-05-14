@@ -37,7 +37,7 @@ namespace CommandService.Data
 
         public bool ExternalPlatformExists(int externalPlatformId)
         {
-            return _context.platforms.Any(p => p.ExternalId == externalPlatformId);
+            return _context.platforms.Any(p => p.ExternalID == externalPlatformId);
         }
 
         public IEnumerable<Platform> GetAllPlatforms()

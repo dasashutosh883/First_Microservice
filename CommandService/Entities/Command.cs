@@ -12,7 +12,7 @@ namespace CommandService.Entities
         [Required]
         public string CommandLine { get; set; }
         [Required]
-        public int PlatformId { get; set; }
+        public int? PlatformId { get; set; }
         public Platform platform { get; set; }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\projectsPractice\\MicroserviceLesJackson\\PlatformService\\PlatformService.csproj": {}
+    "d:\\projectsPractice\\MicroserviceLesJackson\\PlatformService\\PlatformService.csproj": {}
   },
   "projects": {
-    "D:\\projectsPractice\\MicroserviceLesJackson\\PlatformService\\PlatformService.csproj": {
+    "d:\\projectsPractice\\MicroserviceLesJackson\\PlatformService\\PlatformService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projectsPractice\\MicroserviceLesJackson\\PlatformService\\PlatformService.csproj",
+        "projectUniqueName": "d:\\projectsPractice\\MicroserviceLesJackson\\PlatformService\\PlatformService.csproj",
         "projectName": "PlatformService",
-        "projectPath": "D:\\projectsPractice\\MicroserviceLesJackson\\PlatformService\\PlatformService.csproj",
+        "projectPath": "d:\\projectsPractice\\MicroserviceLesJackson\\PlatformService\\PlatformService.csproj",
         "packagesPath": "C:\\Users\\ashutosh.das\\.nuget\\packages\\",
-        "outputPath": "D:\\projectsPractice\\MicroserviceLesJackson\\PlatformService\\obj\\",
+        "outputPath": "d:\\projectsPractice\\MicroserviceLesJackson\\PlatformService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -48,6 +48,10 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "Grpc.AspNetCore": {
+              "target": "Package",
+              "version": "[2.62.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

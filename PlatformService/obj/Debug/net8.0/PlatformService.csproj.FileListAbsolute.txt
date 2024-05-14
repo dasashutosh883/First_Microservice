@@ -142,3 +142,11 @@ d:\projectsPractice\MicroserviceLesJackson\PlatformService\obj\Debug\net8.0\ref\
 d:\projectsPractice\MicroserviceLesJackson\PlatformService\bin\Debug\net8.0\Newtonsoft.Json.dll
 D:\projectsPractice\MicroserviceLesJackson\PlatformService\bin\Debug\net8.0\appsettings.Production.json
 D:\projectsPractice\MicroserviceLesJackson\PlatformService\bin\Debug\net8.0\RabbitMQ.Client.dll
+d:\projectsPractice\MicroserviceLesJackson\PlatformService\obj\Debug\net8.0\PlatformService.sourcelink.json
+D:\projectsPractice\MicroserviceLesJackson\PlatformService\bin\Debug\net8.0\Google.Protobuf.dll
+D:\projectsPractice\MicroserviceLesJackson\PlatformService\bin\Debug\net8.0\Grpc.AspNetCore.Server.dll
+D:\projectsPractice\MicroserviceLesJackson\PlatformService\bin\Debug\net8.0\Grpc.AspNetCore.Server.ClientFactory.dll
+D:\projectsPractice\MicroserviceLesJackson\PlatformService\bin\Debug\net8.0\Grpc.Core.Api.dll
+D:\projectsPractice\MicroserviceLesJackson\PlatformService\bin\Debug\net8.0\Grpc.Net.Client.dll
+D:\projectsPractice\MicroserviceLesJackson\PlatformService\bin\Debug\net8.0\Grpc.Net.ClientFactory.dll
+D:\projectsPractice\MicroserviceLesJackson\PlatformService\bin\Debug\net8.0\Grpc.Net.Common.dll

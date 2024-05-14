@@ -1,4 +1,7 @@
+using CommandService.AsyncDataService;
 using CommandService.Data;
+using CommandService.EventProcessor;
+using CommandService.SyncDataService.Grpc;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,7 +15,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddDbContext<AppDbContext>(opt=>opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<ICommandRepo,CommandRepo>();
-
+builder.Services.AddSingleton<IEventProcessor, EventProcessor>();
+builder.Services.AddHostedService<MessageBusSubscriber>();
+builder.Services.AddScoped<IPlatformDataClient,PlatformDataClient>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

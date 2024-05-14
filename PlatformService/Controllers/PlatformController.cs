@@ -52,7 +52,7 @@ namespace PlatformService.Controllers
                 try
                 {
                     var platformPublished=_mapper.Map<PlatformPublishedDto>(retvalues);
-                    platformPublished.Event="Platform Published";
+                    platformPublished.Event="Platform_Published";
                     _busClient.PublishNewPlatform(platformPublished);
                 }
                 catch(Exception ex){
